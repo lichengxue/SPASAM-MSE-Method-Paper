@@ -1,0 +1,27 @@
+---
+title: "Cover Letter"
+author: "Chengxue Li"
+date: "`r Sys.Date()`"
+output: pdf_document
+fontsize: 11pt
+geometry: margin=1in
+---
+
+Dear Editor,
+
+On behalf of my co-authors, I am pleased to submit our manuscript entitled *“SPASAM-MSE: A generalized spatial management strategy evaluation framework for exploring the impacts of spatial structure on stock assessments and management outcomes”* for consideration in the *Canadian Journal of Fisheries and Aquatic Sciences* special issue on State-Space Methods.
+
+Management strategy evaluation (MSE) is increasingly used to assess the robustness of alternative management procedures under uncertainty, but few generalized tools currently exist to evaluate the role of spatial structure in fisheries stock assessments and management. Our work introduces *SPASAM-MSE*, an R package designed as a flexible and fully generalized spatial MSE platform. The framework integrates spatial processes into both operating and assessment models, enabling users to examine performance across a wide range of spatial complexities—including connectivity, biocomplexity, demographic patterns, fisheries, and management strategies—while leveraging contemporary statistical approaches such as random effects and state-space models.
+
+Through a worked example, we demonstrate how SPASAM-MSE facilitates evaluation of tradeoffs in spatial management decisions, providing a practical and efficient tool for researchers and managers to operationalize spatial considerations in fisheries management. We believe this contribution will be of broad interest to CJFAS readers, given the growing recognition of spatial complexity in marine systems, the increasing demand for robust spatial MSE applications, and the journal’s focus on advancing fisheries science and management tools.
+
+This manuscript has not been published elsewhere and is not under consideration by another journal. All authors have approved the submission. 
+
+Thank you for considering our manuscript. We look forward to the opportunity to contribute to CJFAS and to the discussion on spatial and state-space approaches in fisheries management.
+
+Sincerely,  
+
+Chengxue Li (corresponding author)  
+Northeast Fisheries Science Center, NMFS-NOAA  
+166 Water St., Woods Hole, MA 02543, USA  
+Email: chengxue.li@noaa.gov
