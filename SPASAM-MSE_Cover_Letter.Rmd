@@ -1,0 +1,20 @@
+---
+title: "Cover Letter"
+author: "Li et al."
+output:
+  pdf_document:
+    latex_engine: xelatex
+fontsize: 11pt
+geometry: margin=1in
+---
+
+Dear Associate Editor,
+
+We sincerely appreciate the time and effort that you and the reviewer have invested in evaluating our manuscript, *“SPASAM-MSE: a generalised spatial management strategy evaluation framework for exploring the impacts of spatial structure on stock assessments and management outcomes.”* We have carefully considered all comments and suggestions and believe they have substantially improved the clarity and scope of the manuscript.
+
+Thank you again for your careful handling of our manuscript.
+
+Sincerely,  
+
+Chengxue Li  
+(on behalf of all co-authors)

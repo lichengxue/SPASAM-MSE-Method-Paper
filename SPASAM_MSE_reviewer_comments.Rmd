@@ -1,0 +1,208 @@
+---
+title: "Response to Reviews: SPASAM-MSE — a generalised spatial management strategy evaluation framework for exploring the impacts of spatial structure on stock assessments and management outcomes"
+author: "Authors: Li et al."
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+    latex_engine: xelatex
+fontsize: 11pt
+geometry: margin=1in
+header-includes:
+  - \usepackage{xcolor}
+  - \definecolor{responseblue}{RGB}{0,70,140}
+  - \newenvironment{response}{\par\color{responseblue}\noindent\textbf{Response}\par}{\par\color{black}}
+---
+
+\newpage
+
+# *Cover Letter to the Associate Editor* {-}
+
+Dear Associate Editor,
+
+We sincerely appreciate the time and effort that you and the reviewer have invested in evaluating our manuscript, “SPASAM-MSE: a generalised spatial management strategy evaluation framework for exploring the impacts of spatial structure on stock assessments and management outcomes.” We have carefully considered all comments and suggestions and believe they have substantially improved the clarity and scope of the manuscript. Below we provide our point-by-point responses to the reviewer’s comments.
+
+Thank you again for your careful handling of our manuscript.
+
+Sincerely,
+Chengxue Li
+(on behalf of all co-authors)
+
+\newpage
+
+Reviewer Comments
+
+SPASAM-MSE: a generalised spatial management strategy evaluation framework for exploring the  impacts of spatial structure on stock assessments and management outcomes. 
+
+The paper outlines a generalised spatial MSE tool (SPASAM) for exploring the impacts of spatial structure and  dynamic processes through a simulation modelling framework. This subject is highly relevant to the current  development and implementation of harvest strategies in fisheries worldwide. Whilst there are several  examples of spatially explicit MSE frameworks, these have typically been developed as bespoke modelling  approaches, often having a single, fixed assumption about the type of movement and underlying population  structure and dynamics. The generalised framework described here represents an important and potentially  very useful tool for the exploration and further development of stock assessments and harvest strategies that  better account for spatial complexity. 
+
+The paper is well structured and very well written. The references are appropriate, although the paper Li [in  press], doesn’t appear to be cited in the main text (unless I’ve missed it). The manuscript is suitable for  publication subject to consideration of some minor revisions and corrections as outlined below. 
+
+\begin{response}
+The paper Li et al., 2025 has been added.
+\end{response}
+
+---
+
+# Introduction  
+
+**Reviewer comment 1**
+
+The paper would benefit from some discussion of the relative merits of block transfer (Eulerian) vs particle-based (Lagrangian) movement models, particularly with respect to maintaining meta-population traits. The obvious disadvantage of IBMs is their computational requirements. A limitation of the approach described is that an individual adopts the biological characteristics associated with the environment it moves into. This inability to track individuals implies sudden, implausible, increases or decreases in size as a fish moves between regions. Any sub-population traits (e.g. for slower growth) or history of being in a slow growing environment are lost, hence the true impacts of meta-population structure might not be fully evaluated. This should be discussed more in the limitation section of the paper but might benefit from some initial context in the introduction. 
+
+\begin{response}
+
+We thank the reviewer for this thoughtful comment. We agree that a discussion of Eulerian (block-transfer) versus Lagrangian (particle-based or individual-based) movement frameworks is relevant in the context of spatial modelling. Accordingly, we have addressed this point in the **Limitations** section, where we explicitly discuss the implications of using an Eulerian formulation, including the inability to retain individual life-history trajectories or sub-population traits following movement, and the resulting consequences for representing meta-population structure.
+
+See lines 751--760:
+
+\begin{quote}
+An additional structural limitation arises from the Eulerian (block-transfer) formulation used to represent movement in SPASAM-MSE and WHAM, rather than a Lagrangian or individual-based modelling approach. In the current framework, individuals instantaneously adopt the biological characteristics of the region they enter, such that sub-population traits and environmental history are not retained following movement. As a result, some aspects of meta-population structure associated with life-history differentiation may not be fully captured, although this limitation is reduced under natal-homing configurations, which preserve population-specific spawning dynamics by returning individuals to their natal regions. Nevertheless, particle-based approaches that explicitly preserve individual histories and traits remain computationally prohibitive for closed-loop spatial MSE applications.
+\end{quote}
+\end{response}
+
+---
+
+**Reviewer comment 2**
+
+Whilst the paper doesn’t try to provide a comprehensive review of spatially structured MSE, it might be worth mentioning similar work being conducted other regions. For example, in the Western and Central Pacific,  MULTIFAN-CL has been used, so far, as the basis of spatially structured MSE frameworks for tuna stocks in the  WCPFC. Similar in application to SSIII, MFCL, with supporting software, FLR4MFCL, can implement separate  spatially structured OMs and EMs with additional capacity to simulate tag release and recapture data, as well  as catch, effort, CPUE, size composition data for spatially disaggregated population and fishery units. The  WCPO skipjack tuna MP employs a spatially structured estimation method, tested under a spatially structured  MSE framework. A limitation here is that the same spatial structure was applied to both the OMs and EM.  Unfortunately, this work has not made it to the primary literature and exists only in the grey literature of the  WCPFC. Another example, more relevant to the development of generic tools for spatial population  modelling, SPM has been developed (similar in functionality to CASAL) with general application to toothfish  stocks in the Ross Sea and the impacts of MPAs.  
+
+https://doi.org/10.1016/j.fishres.2017.02.015  
+https://sfi-cybium.fr/fr/generic-modelling-tools-assessment-marine-populations  
+https://doi.org/10.1016/j.ocecoaman.2023.106991  
+
+I suggest it be at the author’s discretion whether they choose to include these examples or not. But as it  stands, the paper feels like it has quite a North American focus in this, and other, respects.
+
+\begin{response}
+
+We thank the reviewer for this thoughtful and constructive comment. We agree that acknowledging related efforts outside North America can strengthen the global context of this work.
+
+In response, we have expanded the Introduction to include additional examples of spatially explicit population modelling and MSE conducted in other regions. Specifically, we now cite the work of Grüss et al. (2024), which evaluates the impacts of the Ross Sea region marine protected area for Antarctic toothfish (\textit{Dissostichus mawsoni}) using a spatially explicit population model. We also explicitly reference the spatially structured tuna MSE framework developed for the Western and Central Pacific Ocean using MULTIFAN-CL and FLR4MFCL (Scott et al. 2018; Davies et al. 2025), as well as the multi-region Atlantic bluefin tuna MSE framework developed under ICCAT (https://iccat.github.io/abft-mse/). We believe that these additions broaden the geographic scope of the manuscript and better reflect the growing international application of spatial considerations in MSE.
+
+\end{response}
+
+---
+
+# Model Description 
+
+2.2.4 Movement dynamics: Non stationarity is implemented in movement dynamics – could this be implemented for other biological parameters too? Perhaps something for further work? 
+
+\begin{response}
+
+We thank the reviewer for this thoughtful and constructive comment. Nonstationarity and nonlinearity in biological processes, including movement dynamics, can be achieved by linking process rates to external environmental covariates through linear or nonlinear relationships. We have explicitly clarified this capability in the manuscript.
+
+See lines 275--278 in Section 2.2.4 (Movement Dynamics):
+
+\begin{quote}
+Nonstationary movement dynamics can also be implemented by linking movement rates to an environmental covariate with linear or nonlinear effects, allowing external forcing (e.g., climate indices) to drive long-term changes in movement behavior (see Section 2.2.6 for details).
+\end{quote}
+
+We further clarify the generality of this framework in Section 2.2.6 (Random Effects and Environmental Covariates), lines 318--321:
+
+\begin{quote}
+Nonstationarity and nonlinearity in biological processes, including movement, can be achieved by linking process rates to external environmental covariates (or pseudo-covariates) through linear or nonlinear relationships, allowing external forcing to drive long-term changes in population dynamics.
+\end{quote}
+
+\end{response}
+
+2.2.6 Random Effects and environmental covariates: random effects are applied to numbers at age transitions,  and in the example provided, an SD of 0.3 has been applied. The reason for including this additional variability  could be explained more clearly in the manuscript. The main purpose of the tool is to explore the effects of  alternative spatial structure and movement rates, yet this additional variability merely blurs the population  structure and obscures the effect of spatial structure and movement. The justification for including it could be  more fully explained. 
+\begin{response}
+
+We thank the reviewer for this thoughtful and constructive comment. Random effects on numbers-at-age (NAA) transitions are included to represent unresolved sources of mortality and loss that are not explicitly parameterized in the operating model, including predation, disease, episodic environmental stress, and emigration beyond the modeled spatial domain. In spatially structured systems, such processes are common and often difficult to observe or model mechanistically.
+
+In our previous simulation and MSE studies, we have consistently prioritized the use of NAA random effects as a pragmatic and biologically plausible representation of population process uncertainty (Li et al., 2024; Li et al., 2025a,b). Given that the SPASAM framework is able to estimate NAA random effects and movement rates simultaneously, we view this as both practically important for stock assessment applications and consistent with realistic population dynamics.
+
+We have added a clarification of this motivation in the manuscript.
+
+See lines 580--583:
+
+\begin{quote}
+These random effects represent unresolved sources of mortality and loss from the modeled spatial domain (e.g., predation, disease, or emigration beyond modeled regions), allowing the OM to reflect realistic process uncertainty.
+\end{quote}
+
+\end{response}
+
+2.5.1 Biological reference points: The tool only provides for F-based reference points, and specifically FX% SPR and FMSY, which seems to be a limitation given the inability to keep track of the historical exposure to fishing  for the moving components of the stock. The extent to which the global Fx% approximates the true value will  presumably depend on the difference in life-history traits between the sub-populations and potentially the  extent of mixing. Identifying the fully selected age may also be complicated by changes in selectivity for  different movement rates. Biomass based reference points might be more robust in this context, although still  subject to potential bias for some of the same reasons above. 
+
+\begin{response}
+
+We thank the reviewer for this thoughtful comment. We agree that the definition and interpretation of biological reference points in spatially connected populations with movement is a challenging and still-developing area of research. In such systems, classical per-recruit assumptions are violated because individuals may experience multiple selectivity and fishing mortality regimes over their lifetime as they move among regions, and the identification of a fully selected age can be complicated when movement and selectivity interact.
+
+At present, SPASAM-MSE supports F-based reference points (FX\%SPR and FMSY) following the WHAM framework, which provides a consistent equilibrium-based approximation for spatially connected populations. However, we recognize that the accuracy of global FX\%SPR may depend on differences in life-history traits among sub-populations and the magnitude and directionality of movement.
+
+We note that this limitation is already acknowledged in the manuscript under Future Work, where we highlight the evaluation and implementation of additional spatial reference points as an important next step. We also emphasize that the management module in SPASAM-MSE is fully modular, allowing users to implement custom reference points and harvest control rules, which facilitates methodological development as best practices for spatial biological reference points continue to evolve.
+
+\end{response}
+
+2.5.3 Catch Projection: typo line 459 “SPASMA-MSE” 
+
+\begin{response}
+Fixed. Thanks!
+\end{response}
+
+---
+
+# Example Application 
+
+Realising that this section provides an example of the use of the tool and that the specifics of particular settings are merely indicative of the options available, it may still be useful to provide some indication of the relevance and implications of the settings selected. 
+
+\begin{response}
+
+We thank the reviewer for this thoughtful comment. We agree that the example application is intended to demonstrate the flexibility of the SPASAM-MSE framework and that the specific settings used are illustrative rather than prescriptive. Given the large number of modeling choices and configuration options available within a closed-loop spatial MSE, a comprehensive evaluation of the relevance and implications of each setting is beyond the scope of the present manuscript.
+
+The primary objective of this example is to showcase how the framework can be configured to explore alternative assumptions about spatial structure, movement, recruitment, and management procedures. An important advantage of SPASAM-MSE is precisely that it allows users to readily explore the relevance and implications of different modeling and management assumptions through targeted simulation experiments.
+
+With respect to catch apportionment strategies in particular, we note that commonly used approaches such as catch-history-based or survey-based apportionment are widely applied in practice, but we have intentionally included a broader suite of options to support methodological development and to allow users to evaluate alternative strategies that may be of interest for specific applications. A dedicated study exploring the performance and trade-offs among alternative catch apportionment strategies is currently in preparation (Li, in prep.).
+
+\end{response}
+
+3.4 MSE settings: A 15- year feedback period is selected. Some indication of the generation time of the simulated stock would also be useful to understand appropriateness of the selected period. 
+
+\begin{response}
+
+We thank the reviewer for this helpful comment. The 15-year feedback period was selected for illustrative purposes to demonstrate the closed-loop functionality of the SPASAM-MSE framework within a computationally efficient simulation design. For the simulated stock, this period corresponds approximately to 1.5 generations, which is sufficient to capture intergenerational dynamics while keeping the example application concise and tractable.
+
+We emphasize that the example application is intended to provide a practical demonstration of the tool rather than a fully conditioned management evaluation. In applied MSE studies, the feedback period should be tailored to the life history of the species and the management objectives of interest, and longer horizons may be appropriate for long-lived species or when evaluating long-term management performance.
+
+We also incorporated your point in our manuscript.
+
+See lines 614--615:
+
+\begin{quote}
+In this example, we specified a 15-year feedback period (approximately 1.5 generations for the studied species), with assessments conducted every 3 years, resulting in two assessments over its duration. 
+\end{quote}
+
+\end{response}
+
+Possible error on line 606 – should this read “… in five assessments over its duration.” ? 
+
+\begin{response}
+Fixed. Thanks a lot for pointing this out!
+\end{response}
+
+Figure 6: Figure caption differs from the figure labels for boxes B and C. 
+
+\begin{response}
+Fixed. Thanks!
+\end{response}
+---
+
+# Discussion 
+
+4.2 Limitations: Several of the comments above can perhaps be addressed in this section (specifically the  comments on block transfer vs particle based modelling approaches (see above).  
+
+In addition the limitation of using age as the fundamental partition for tracking population dynamics could be  expanded beyond just restricting applicability to length-based assessment examples. Key biological processes  such as maturity, fecundity, natural mortality and likely movement, are more often length based than age  based. Sub-population units having different growth trajectories through either population traits or  environmental exposure will likely follow different life-history paths with potential implications for movement  and population structuring.
+
+\begin{response}
+
+We thank the reviewer for this thoughtful comment. We agree that many key biological processes, including maturity, fecundity, natural mortality, and movement, are often more closely linked to length than age, and that sub-populations with different growth trajectories may follow distinct life-history pathways with implications for spatial structure and movement dynamics.
+
+We have expanded the discussion in the Limitations section to acknowledge this more explicitly.
+
+See lines 731--740:
+
+\begin{quote}
+Another limitation is that SPASAM-MSE currently uses age as the fundamental partition for tracking population dynamics, which may restrict its applicability to fisheries or regions where length-based assessments are the standard. Key biological processes such as maturity, fecundity, natural mortality, and movement are often more closely linked to length than age, and sub-populations with different growth trajectories may therefore follow distinct life-history pathways with implications for spatial structure and movement dynamics. While a length-based extension has been developed within WHAM (Correa et al., 2023), it has not yet been implemented in SPASAM-MSE, in part because jointly tracking age and length would substantially increase computational demands and limit accessibility for users running spatial MSEs on personal computers.
+\end{quote}
+
+\end{response}
