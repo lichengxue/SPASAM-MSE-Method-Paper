@@ -12,7 +12,7 @@ The purpose of this project is to provide open access to simulation code, figure
 - **SPASAM_MSE_reviewer_comments.Rmd / .pdf** – Reviewer responses and manuscript changes.
 - **Method_Paper_Plot.R** – R code to reproduce key figures used in the manuscript.
 - **SPASAM-MSE-Final.pdf / .docx** – Final manuscript and supplementary materials.
-- **Plots and Figures** – Image files used in the manuscript (e.g., `Main.png`, other figure panels).
+- **Plots and Figures** – Image files used in the manuscript.
 
 ## Overview
 
